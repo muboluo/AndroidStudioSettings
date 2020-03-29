@@ -1,0 +1,7 @@
+<templateSet group="AndroidXML">
+  <template name="mylinearlayout" value="&lt;LinearLayout&#10;    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&#10;    android:layout_width=&quot;match_parent&quot;&#10;    android:layout_height=&quot;match_parent&quot;&#10;   &gt;&#10;&#10;&lt;/LinearLayout&gt;" description="创建linearLayout" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+</templateSet>

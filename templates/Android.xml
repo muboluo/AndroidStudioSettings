@@ -1,0 +1,126 @@
+<templateSet group="Android">
+  <template name="start_my" value="this.startActivity( new Intent($className$.this, $ACTIVITY$.class));&#10;" description="start a activity" toReformat="false" toShortenFQNames="true">
+    <variable name="className" expression="className()" defaultValue="" alwaysStopAt="false" />
+    <variable name="ACTIVITY" expression="clipboard()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="click" value="$cast$.setOnClickListener(this);&#10;" description="快速创建click listener" toReformat="false" toShortenFQNames="true">
+    <variable name="cast" expression="clipboard()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="switchcase" value="switch ($num$){&#10;&#10;  case $nmu2$:&#10;    &#10;    break;&#10;&#10;}" description="switch case" toReformat="false" toShortenFQNames="true">
+    <variable name="num" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="nmu2" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="fbc" value="$View$ $resId$ = $cast$ findViewById(R.id.$resId$);" description="findViewById with cast" toReformat="true" toShortenFQNames="true">
+    <variable name="View" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="cast" expression="castToLeftSideType()" defaultValue="" alwaysStopAt="false" />
+    <variable name="resId" expression="clipboard()" defaultValue="" alwaysStopAt="false" />
+    <context />
+  </template>
+  <template name="handler_my" value="private android.os.Handler handler = new android.os.Handler(){&#10;            @Override&#10;            public void handleMessage(Message msg) {&#10;                &#10;             &#10;            }&#10;    };" description="" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="TAG" value=" public static final String TAG = $value$.class.getSimpleName();" description="TAG" toReformat="true" toShortenFQNames="true">
+    <variable name="value" expression="className()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="instance" value="private static $CLASS_NAME$ INSTANCE;" description="create static instance" toReformat="false" toShortenFQNames="true">
+    <variable name="CLASS_NAME" expression="className()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="conststring" value="public static final String $name$ = &quot;$name$&quot;;" description="常量 string" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="bdvbutter" value="@BindView(R.id.$cast$)&#10;$View$ $cast$;" description="butterknife绑定控件" toReformat="false" toShortenFQNames="true">
+    <variable name="cast" expression="clipboard()" defaultValue="" alwaysStopAt="true" />
+    <variable name="View" expression="" defaultValue="View" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="newInstance" value="public static $fragment$ newInstance($args$) {&#10;    $nullChecks$&#10;    android.os.Bundle args = new Bundle();&#10;    $addArgs$&#10;    $fragment$ fragment = new $fragment$();&#10;    fragment.setArguments(args);&#10;    return fragment;&#10;}" description="create a new Fragment instance with arguments" toReformat="true" toShortenFQNames="true">
+    <variable name="fragment" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="args" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="nullChecks" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="addArgs" expression="" defaultValue="" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="staticmethod" value="public static $return$ $methodname$ ($args$) {&#10;   &#10;    return ;&#10;}" description="创建静态方法" toReformat="false" toShortenFQNames="true">
+    <variable name="return" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="methodname" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="args" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="sgi" value=" private static $CLASS_NAME$ INSTANCE;&#10;&#10;    private $CLASS_NAME$() {&#10;    }&#10;&#10;    public static $CLASS_NAME$ getInstance() {&#10;&#10;        if (INSTANCE == null) {&#10;&#10;            INSTANCE = new $CLASS_NAME$();&#10;        }&#10;        return INSTANCE;&#10;    }" description="单例模式" toReformat="false" toShortenFQNames="true">
+    <variable name="CLASS_NAME" expression="className()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="ock" value="@OnClick(R.id.$cast$)&#10;public void click$name$() {&#10;&#10;    $content$&#10;}" description="butterKnife 点击事件" toReformat="false" toShortenFQNames="true">
+    <variable name="cast" expression="clipboard()" defaultValue="" alwaysStopAt="true" />
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="content" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="empstr" value="if (TextUtils.isEmpty($cast$)) {&#10;    &#10;    $content$&#10;}&#10;" description="字符创是否为空" toReformat="false" toShortenFQNames="true">
+    <variable name="cast" expression="clipboard()" defaultValue="" alwaysStopAt="true" />
+    <variable name="content" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="bdv" value="private $View$ $cast$;" description="绑定控件" toReformat="false" toShortenFQNames="true">
+    <variable name="cast" expression="clipboard()" defaultValue="" alwaysStopAt="true" />
+    <variable name="View" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="pbdv" value="protected $View$ $cast$;" description="protected 绑定控件" toReformat="false" toShortenFQNames="true">
+    <variable name="cast" expression="clipboard()" defaultValue="" alwaysStopAt="true" />
+    <variable name="View" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="gfbc" value="$View$ $resId$ = $cast$ getView().findViewById(R.id.$resId$);" description="findViewById with cast" toReformat="true" toShortenFQNames="true">
+    <variable name="View" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="cast" expression="castToLeftSideType()" defaultValue="" alwaysStopAt="false" />
+    <variable name="resId" expression="clipboard()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="setb" value="app:layout_constraintStart_toStartOf=&quot;$parent1$&quot;&#10;app:layout_constraintEnd_toEndOf=&quot;$parent2$&quot;&#10;app:layout_constraintBottom_toBottomOf=&quot;$parent3$&quot;&#10;app:layout_constraintTop_toTopOf=&quot;$parent4$&quot;" description="constaintLayoutStartEndTopBottom" toReformat="false" toShortenFQNames="true">
+    <variable name="parent1" expression="" defaultValue="parent" alwaysStopAt="true" />
+    <variable name="parent2" expression="" defaultValue="parent" alwaysStopAt="true" />
+    <variable name="parent3" expression="" defaultValue="parent" alwaysStopAt="true" />
+    <variable name="parent4" expression="" defaultValue="parent" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+</templateSet>
