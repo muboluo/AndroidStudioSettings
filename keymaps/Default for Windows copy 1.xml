@@ -6,6 +6,10 @@
   <action id="FindInPath">
     <keyboard-shortcut first-keystroke="shift meta f" />
   </action>
+  <action id="ShowErrorDescription">
+    <keyboard-shortcut first-keystroke="ctrl f1" />
+    <keyboard-shortcut first-keystroke="alt p" />
+  </action>
   <action id="UpdateRunningApplication" />
   <action id="android.deploy.ApplyChanges">
     <keyboard-shortcut first-keystroke="ctrl f10" />
