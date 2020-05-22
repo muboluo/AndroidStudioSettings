@@ -1,6 +1,7 @@
 <application>
   <component name="AppStorage">
     <histories>
+      <item value="intrinsic" />
       <item value="opacity" />
       <item value="reveal" />
       <item value="impose" />
